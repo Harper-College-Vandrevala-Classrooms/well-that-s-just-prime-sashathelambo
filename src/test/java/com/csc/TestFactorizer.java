@@ -1,19 +1,15 @@
 package com.csc;
 
+import java.util.List;
+
 import static org.junit.jupiter.api.Assertions.assertArrayEquals;
 import static org.junit.jupiter.api.Assertions.assertNull;
-
-import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 public class TestFactorizer {
 
   Factorizer factorizer;
 
-  @BeforeEach
-  void setUp() {
-    factorizer = new Factorizer();
-  }
 
   @Test
     public void testZero() {
@@ -30,7 +26,7 @@ public class TestFactorizer {
     @Test
     public void testTen() {
         // Testing primeFactors with input 10, expecting [2, 5]
-        int[] expected = {2, 5};
-        assertArrayEquals(expected, factorizer.primeFactors(10), "Prime factors of 10 should be [2, 5].");
+        List<Integer> expected = List.of(2, 5);
+        assertArrayEquals(expected.toArray(), factorizer.primeFactors(10).toArray(), "Prime factors of 10 should be [2, 5].");
     }
 }
