@@ -4,12 +4,17 @@ import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.assertArrayEquals;
 import static org.junit.jupiter.api.Assertions.assertNull;
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 public class TestFactorizer {
 
   Factorizer factorizer;
 
+  @BeforeEach
+  public void setUp() {
+      factorizer = new Factorizer();
+  }
 
   @Test
     public void testZero() {
